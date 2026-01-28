@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
 
     const roleProfile = ROLE_MAP[role];
 
-    // 1️⃣ Save Resume (raw input)
+  
     // const resume = await Resume.create({
     //   rawText: resumeText,
     //   extractedSections: {
@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
     //   }
     // });
 
-    // 2️⃣ Extract claims
+    
     const claims = extractClaims(resumeText,roleProfile);
     //console.log("Claims:")
     //console.log(claims)
@@ -56,22 +56,19 @@ router.post("/", async (req, res) => {
     //console.log("Evidence")
     //console.log(evidence)
     const validatedClaims = validateClaims(claims, evidence,roleProfile);
-    console.log("Validation:");
-    console.log(validatedClaims)
+    //console.log("Validation:");
+    //console.log(validatedClaims)
 
     const finalText=evaluateResume(validatedClaims);
-    console.log("Result:")
+    //console.log("Result:")
     console.log(finalText);
 
 
     
 
-    //console.log(claims);
-
-    //console.log(evidence);
     
 
-    // 3️⃣ Save Evaluation (derived judgment)
+    
     // const evaluation = await Evaluation.create({
     //   resumeId: resume._id,
     //   claims,

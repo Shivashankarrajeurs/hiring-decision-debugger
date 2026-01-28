@@ -44,7 +44,7 @@ export const BackendRoleProfile = {
     SYSTEM_DESIGN: ["ARCHITECTURE_DECISION"]
   },
 
-  // 🆕 THIS IS THE KEY ADDITION
+  // 
   evidenceStrengthRules: {
     PERFORMANCE_METRIC: {
       strongIf: {

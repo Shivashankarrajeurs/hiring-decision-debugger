@@ -19,7 +19,7 @@ export function extractEvidence(text) {
    const performanceKeywords = EVIDENCE_BUCKETS.PERFORMANCE_METRIC;
   for (const sentence of sentences) {
 
-    // ✅ NEW: causal performance evidence (no numbers)
+    
     if (
        PERFORMANCE_CAUSAL_VERBS.some(v => sentence.includes(v)) &&
   performanceKeywords.some(k => sentence.includes(k))
@@ -31,7 +31,7 @@ export function extractEvidence(text) {
       });
     }
 
-    // Existing keyword-based extraction
+    // keyword-based extraction
     for (const [type, keywords] of Object.entries(EVIDENCE_BUCKETS)) {
       const matched = [];
 

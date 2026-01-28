@@ -1,10 +1,9 @@
-// This file is ONLY responsible for explaining outcomes.
-// It does NOT make decisions.
+
 
 export function generateExplanations(validatedClaims, finalDecision) {
   const explanations = [];
 
-  // 1️⃣ Claim-level explanations
+  //  Claim-level explanations
   for (const claim of validatedClaims) {
     let explanationText = "";
 
@@ -28,7 +27,7 @@ export function generateExplanations(validatedClaims, finalDecision) {
     });
   }
 
-  // 2️⃣ Final decision explanation (high-level)
+  // Final decision explanation (high-level)
   explanations.push({
     decision: finalDecision,
     explanation: getDecisionExplanation(finalDecision)
@@ -37,9 +36,9 @@ export function generateExplanations(validatedClaims, finalDecision) {
   return explanations;
 }
 
-// ----------------------------------------
+
 // Decision-level explanation helper
-// ----------------------------------------
+
 function getDecisionExplanation(decision) {
   if (decision === "STRONG_MATCH") {
     return "The resume contains multiple well-supported technical claims relevant to the role.";

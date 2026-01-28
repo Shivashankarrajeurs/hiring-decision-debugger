@@ -5,7 +5,7 @@ export function classifyEvidence(evidence, roleProfile) {
   const text = evidence.sourceText.toLowerCase();
   const numbers = text.match(/\d+/g);
 
-  // 🔥 STRONG evidence rules
+  // STRONG evidence rules
   if (
     rules.strongIf?.requiresNumbers &&
     numbers &&
@@ -14,7 +14,7 @@ export function classifyEvidence(evidence, roleProfile) {
     return "STRONG";
   }
 
-  // 🟡 WEAK evidence rules
+  // WEAK evidence rules
   if (
     rules.weakIf?.causalVerbs &&
     rules.weakIf.causalVerbs.some(v => text.includes(v))

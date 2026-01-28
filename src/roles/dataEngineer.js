@@ -12,7 +12,7 @@ export const DataEngineerRoleProfile = {
 ],
 
 
-  // 1️⃣ Claim domains (what kinds of claims matter)
+  // Claim domains 
   claimDomains: {
     PIPELINE: ["etl", "pipeline", "data ingestion", "batch job", "stream"],
     ORCHESTRATION: ["airflow", "dag", "scheduler"],
@@ -29,7 +29,7 @@ export const DataEngineerRoleProfile = {
   ]
   },
 
-  // 2️⃣ Evidence mapping (what evidence supports which domain)
+  // Evidence mapping 
   evidenceMapping: {
     PIPELINE: ["PIPELINE_DESIGN"],
     ORCHESTRATION: ["ORCHESTRATION_CONFIG"],
@@ -38,7 +38,7 @@ export const DataEngineerRoleProfile = {
     SYSTEM_DESIGN: ["ARCHITECTURE_DECISION"]
   },
 
-  // 3️⃣ Evidence strength rules (THIS is the key)
+  //  Evidence strength rules
   evidenceStrengthRules: {
     PIPELINE_DESIGN: {
       weakIf: { always: true }

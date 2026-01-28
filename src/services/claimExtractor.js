@@ -31,7 +31,7 @@ export function extractClaims(text,roleProfile) {
       sentence.includes(skill)
     );
 
-    // 🔹 1. Performance claim with metrics (NEW)
+    //Performance claim with metrics
     if (
       hasVerb &&
       hasPerformanceMetric(sentence) &&
@@ -45,7 +45,7 @@ export function extractClaims(text,roleProfile) {
       continue;
     }
 
-    // 🔹 Meta system / architecture claim
+    // architecture claim
 if (
   hasVerb &&
   roleProfile.claimDomains.SYSTEM_DESIGN?.some(k =>
@@ -61,7 +61,7 @@ if (
 }
 
 
-    // 🔹 2. Skill-based implementation claim (EXISTING)
+    // skill-based implementation claim
     if (hasVerb && matchedSkills.length > 0) {
       claims.push({
         type: "skill_usage",

@@ -9,21 +9,21 @@ export function validateClaims(claims, evidence, roleProfile) {
   return claims.map(claim => {
     const claimText = claim.sentence.toLowerCase();
 
-    // 1️⃣ Detect ALL matching domains (FIX)
+    // Detect ALL matching domains
     const detectedDomains = Object.entries(roleProfile.claimDomains)
       .filter(([_, keywords]) =>
         keywords.some(keyword => claimText.includes(keyword))
       )
       .map(([domain]) => domain);
 
-    // 2️⃣ Collect evidence matching ANY detected domain
+    // Collect evidence matching ANY detected domain
     const relatedEvidence = evidence.filter(e =>
       detectedDomains.some(domain =>
         roleProfile.evidenceMapping[domain]?.includes(e.type)
       )
     );
 
-    // 3️⃣ No evidence
+    //  No evidence
   if (relatedEvidence.length === 0) {
   // Claim has domain + action → treat as weak claim
   if (detectedDomains.length > 0 && hasActionVerb(claimText)) {
@@ -43,7 +43,7 @@ export function validateClaims(claims, evidence, roleProfile) {
 }
 
 
-    // 4️⃣ Aggregate evidence strength
+    // Aggregate evidence strength
     const strengths = relatedEvidence.map(e =>
   classifyEvidence(e, roleProfile)
 );

@@ -5,13 +5,13 @@ import { generateExplanations } from "./explanationGenerator.js";
 import { determineConfidence } from "./confidenceEngine.js";
 
 export function evaluateResume(validatedClaims) {
-  // 1️⃣ Compute stats
+  //  Compute stats
   const stats = computeClaimStats(validatedClaims);
 
-  // 2️⃣ Apply rule engine
+  //  Apply rule engine
   const decisionResult = applyDecisionRules(stats, decisionRules);
 
-  // 3️⃣ Generate explanations
+  //  Generate explanations
   const claimExplanations = generateExplanations(
     validatedClaims,
     decisionResult.decision
