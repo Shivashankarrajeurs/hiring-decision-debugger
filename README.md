@@ -38,7 +38,7 @@ This makes the system:
 
 ## Architecture
 
-Resume Text->Claim Extraction (role-aware)->Evidence Extraction (role-agnostic)->Claim Validation (role-specific rules)->Decision Engine->Decision + Confidence + Explanations
+Resume Text -> Claim Extraction (role-aware) -> Evidence Extraction (role-agnostic) -> Claim Validation (role-specific rules) -> Decision Engine -> Decision + Confidence + Explanations
 
 
 ## Key Concepts
@@ -145,7 +145,7 @@ Output:
   "confidence": "MEDIUM",
   "reason": "Some claims are strongly supported, while others require human judgment."
 }
-```
+  ```
 
 ##  Tech Stack
 - Node.js
