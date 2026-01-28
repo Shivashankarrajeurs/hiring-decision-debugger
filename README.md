@@ -145,7 +145,7 @@ Output:
   "confidence": "MEDIUM",
   "reason": "Some claims are strongly supported, while others require human judgment."
 }
-
+```
 
 ##  Tech Stack
 - Node.js
